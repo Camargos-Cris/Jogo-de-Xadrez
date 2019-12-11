@@ -16,6 +16,9 @@ namespace Xadrez.tabuleiro
             this.colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
-
+        public Peca peca(int i,int j)
+        {
+            return pecas[i, j];
+        }
     }
 }
