@@ -14,7 +14,7 @@ namespace Xadrez
                 for (int j = 0; j < t.colunas; j++)
                 {
                     if (t.peca(i, j) == null)
-                        Console.Write(" - ");
+                        Console.Write("- ");
                     else
                         Console.Write(t.peca(i, j) + " ");
                 }
