@@ -11,9 +11,9 @@ namespace Xadrez.tabuleiro
         public int quantmovi { get; protected set; }
         public Tabuleiro tabu { get; protected set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tabu)
+        public Peca(Cor cor, Tabuleiro tabu)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.cor = cor;
             this.tabu = tabu;
             quantmovi = 0;
