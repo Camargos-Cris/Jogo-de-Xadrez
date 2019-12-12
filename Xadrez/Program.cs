@@ -9,16 +9,11 @@ namespace Xadrez
         {
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
-                tab.insertPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
-                tab.insertPeca(new Torre(Cor.Preta, tab), new Posicao(0, 7));
-                tab.insertPeca(new Torre(Cor.Branca, tab), new Posicao(7, 0));
-                tab.insertPeca(new Torre(Cor.Branca, tab), new Posicao(7, 7));
-                tab.insertPeca(new Rei(Cor.Branca, tab), new Posicao(7, 8));
-                tab.insertPeca(new Rei(Cor.Preta, tab), new Posicao(0, 4));
-                Tela.imprimirTabu(tab);
+                PosXadrez pos = new PosXadrez('c', 7);
+                Console.WriteLine(pos);
+                Console.WriteLine(pos.toPosition());
             }
-            catch(TabuleiroException e)
+            catch (TabuleiroException e)
             { Console.WriteLine(e.Message); }
         }
     }
