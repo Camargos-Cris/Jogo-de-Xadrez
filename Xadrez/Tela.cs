@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xadrez.tabuleiro;
+using Xadrez.jogo;
 
 namespace Xadrez
 {
@@ -39,6 +40,13 @@ namespace Xadrez
                 Console.ForegroundColor = aux;
 
             }
+        }
+        public static PosXadrez lerPosXadrez()
+        {
+            string txt = Console.ReadLine();
+            char coluna = txt[0];
+            int linha = int.Parse(txt[1] + "");
+            return new PosXadrez(coluna, linha);
         }
     }
 }

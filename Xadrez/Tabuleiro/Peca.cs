@@ -18,5 +18,7 @@ namespace Xadrez.tabuleiro
             this.tabu = tabu;
             quantmovi = 0;
         }
+        public void incrementarQtMovi()
+        { quantmovi++; }
     }
 }
