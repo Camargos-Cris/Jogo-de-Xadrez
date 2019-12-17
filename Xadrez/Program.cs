@@ -7,6 +7,7 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
+
             try
             {
                 Partida partida = new Partida();
@@ -18,6 +19,10 @@ namespace Xadrez
                     Console.WriteLine();
                     Console.Write("Digite a posição de origem: ");
                     Posicao origem = Tela.lerPosXadrez().toPosition();
+                    bool[,] possiveispos = partida.tab.peca(origem).possiveisMove();
+                    Console.Clear();
+                    Tela.imprimirTabu(partida.tab,possiveispos);
+                    Console.WriteLine();
                     Console.Write("Digite a posição de destino: ");
                     Posicao destino = Tela.lerPosXadrez().toPosition();
                     partida.executarMove(origem, destino);
@@ -26,7 +31,7 @@ namespace Xadrez
             }
             catch (TabuleiroException e)
             { Console.WriteLine(e.Message); }
-            catch(FormatException e)
+            catch (FormatException e)
             { Console.WriteLine(e.Message); }
         }
     }

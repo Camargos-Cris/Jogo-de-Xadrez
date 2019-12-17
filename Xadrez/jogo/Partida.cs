@@ -33,6 +33,7 @@ namespace Xadrez.jogo
             tab.insertPeca(new Torre(Cor.Branca, tab), new PosXadrez('h', 1).toPosition());
             tab.insertPeca(new Torre(Cor.Preta, tab), new PosXadrez('a', 8).toPosition());
             tab.insertPeca(new Torre(Cor.Preta, tab), new PosXadrez('h', 8).toPosition());
+            tab.insertPeca(new Rei(Cor.Preta, tab), new PosXadrez('d',8 ).toPosition());
         }
 
     }

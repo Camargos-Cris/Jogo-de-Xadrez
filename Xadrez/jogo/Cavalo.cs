@@ -11,5 +11,9 @@ namespace Xadrez.jogo
         {
             return "C";
         }
+        public override bool[,] possiveisMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

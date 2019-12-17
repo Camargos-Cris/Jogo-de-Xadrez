@@ -16,29 +16,50 @@ namespace Xadrez
                 for (int j = 0; j < t.colunas; j++)
                 {
 
-                    if (t.peca(i, j) == null)
-                        Console.Write("- ");
-                    else
-                    {
-                        imprimePeca(t.peca(i, j));
-                        Console.Write(" ");
-                    }
+                    imprimePeca(t.peca(i, j));
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h ");
         }
+        public static void imprimirTabu(Tabuleiro t,bool[,]possiveispos)
+        {
+            ConsoleColor fundoOriginal = Console.BackgroundColor;
+            ConsoleColor fundoAlter = ConsoleColor.DarkGray;
+            for (int i = 0; i < t.linhas; i++)
+            {
+                Console.Write(t.linhas - i + " ");
+                for (int j = 0; j < t.colunas; j++)
+                {
+                    if(possiveispos[i,j])
+                    { Console.BackgroundColor = fundoAlter; }
+                    else
+                    { Console.BackgroundColor = fundoOriginal; }
+                    imprimePeca(t.peca(i, j));
+                    Console.BackgroundColor = fundoOriginal;
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("  a b c d e f g h ");
+            Console.BackgroundColor = fundoOriginal;
+        }
         public static void imprimePeca(Peca pec)
         {
-            if (pec.cor == Cor.Branca)
-            { Console.Write(pec); }
+            if (pec == null)
+            { Console.Write("- "); }
             else
             {
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(pec);
-                Console.ForegroundColor = aux;
+                if (pec.cor == Cor.Branca)
+                { Console.Write(pec); }
+                else
+                {
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(pec);
+                    Console.ForegroundColor = aux;
 
+                }
+                Console.Write(" ");
             }
         }
         public static PosXadrez lerPosXadrez()

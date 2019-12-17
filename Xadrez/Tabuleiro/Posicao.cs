@@ -14,6 +14,11 @@ namespace Xadrez.tabuleiro
             this.linha = linha;
             this.coluna = coluna;
         }
+        public void defineValor(int linha,int coluna)
+        {
+            this.linha = linha;
+            this.coluna = coluna;
+        }
         public override string ToString()
         {
             return "Linha: "+ linha
