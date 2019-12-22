@@ -7,7 +7,7 @@ namespace Xadrez.tabuleiro
     abstract class Peca
     {
         public Posicao posicao { get; set; }
-        public Cor cor { get;protected  set; }
+        public Cor cor { get; protected set; }
         public int quantmovi { get; protected set; }
         public Tabuleiro tab { get; protected set; }
 
@@ -20,6 +20,26 @@ namespace Xadrez.tabuleiro
         }
         public void incrementarQtMovi()
         { quantmovi++; }
+        public bool existeMovimentoPossivel()
+        {
+            bool[,] mat = possiveisMove();
+            for (int i = 0; i < tab.linhas; i++)
+            {
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    if (mat[i, j])
+                    {
+                        return true;
+                    }
+
+                }
+            }
+            return false;
+        }
+        public bool podeMoverPara(Posicao pos)
+        {
+            return possiveisMove()[pos.linha, pos.coluna];
+        }
         public abstract bool[,] possiveisMove();
     }
 }
