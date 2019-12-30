@@ -15,6 +15,8 @@ namespace Xadrez
             imprimePecasCap(partida);
             Console.WriteLine("Turno:{0}", partida.turno);
             Console.WriteLine("Aguardando movimento das peças:{0}", partida.jogadorAtual);
+            if (partida.xeque)
+            { Console.WriteLine("XEQUE!"); }
         }
 
         private static void imprimePecasCap(Partida partida)

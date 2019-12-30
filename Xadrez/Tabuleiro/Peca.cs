@@ -20,6 +20,10 @@ namespace Xadrez.tabuleiro
         }
         public void incrementarQtMovi()
         { quantmovi++; }
+        public void decrementarQtMovi()
+        {
+            quantmovi--;
+        }
         public bool existeMovimentoPossivel()
         {
             bool[,] mat = possiveisMove();
