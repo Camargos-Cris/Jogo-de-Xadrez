@@ -49,8 +49,15 @@ namespace Xadrez.jogo
                 xeque = true;
             }
             else { xeque = false; }
-            turno++;
-            alterPlayer();
+            if (testeXequemate(adversaria(jogadorAtual)))
+            {
+                terminou = true;
+            }
+            else
+            {
+                turno++;
+                alterPlayer();
+            }
         }
         public void desfazMove(Posicao origem, Posicao destino, Peca cap)
         {
@@ -155,6 +162,32 @@ namespace Xadrez.jogo
                 }
             }
             return false;
+        }
+        public bool testeXequemate(Cor cor)
+        {
+            if (!estaEmXeque(cor))
+            {
+                return false;
+            }
+            foreach (Peca item in pecasEmJogo(cor))
+            {
+                bool[,] mat = item.possiveisMove();
+                for (int i = 0; i < tab.linhas; i++)
+                    for (int j = 0; j < tab.colunas; j++)
+                    {
+                        if (mat[i, j])
+                        {
+                            Posicao origem = item.posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecacap = executarMove(origem,destino);
+                            bool testeXeque = estaEmXeque(cor);
+                            desfazMove(origem, destino,pecacap);
+                            if(!testeXeque)
+                            { return false; }
+                        }
+                    }
+            }
+            return true;
         }
         public void colocarNovaPeca(char coluna, int linha, Peca peca)
         {

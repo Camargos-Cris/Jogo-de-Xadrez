@@ -14,9 +14,14 @@ namespace Xadrez
             Console.WriteLine();
             imprimePecasCap(partida);
             Console.WriteLine("Turno:{0}", partida.turno);
-            Console.WriteLine("Aguardando movimento das peças:{0}", partida.jogadorAtual);
-            if (partida.xeque)
-            { Console.WriteLine("XEQUE!"); }
+            if (!partida.terminou)
+            {
+                Console.WriteLine("Aguardando movimento das peças:{0}", partida.jogadorAtual);
+                if (partida.xeque)
+                { Console.WriteLine("XEQUE!"); }
+            }
+            else
+            { Console.WriteLine("Xeque mate a peça " + partida.jogadorAtual + " venceu o jogo"); }
         }
 
         private static void imprimePecasCap(Partida partida)

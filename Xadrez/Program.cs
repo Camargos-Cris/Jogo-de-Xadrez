@@ -36,7 +36,15 @@ namespace Xadrez
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
+                    catch(IndexOutOfRangeException x)
+                    {
+                        Console.WriteLine(x.Message);
+                        Console.ReadLine();
+                    }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
+                
 
             }
             catch (TabuleiroException e)
