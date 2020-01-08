@@ -5,7 +5,7 @@ using Xadrez.tabuleiro;
 
 namespace Xadrez.jogo
 {
-    class Rainha:Peao
+    class Rainha:Peca
     {
         public Rainha(Cor cor, Tabuleiro tab) : base(cor, tab) { }
         public override string ToString()

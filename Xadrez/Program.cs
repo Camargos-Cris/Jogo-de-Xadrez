@@ -41,6 +41,11 @@ namespace Xadrez
                         Console.WriteLine("Valores de posição inválido");
                         Console.ReadLine();
                     }
+                    catch(FormatException)
+                    {
+                        Console.WriteLine("Formato de dado inválido");
+                        Console.ReadLine();
+                    }
                 }
                 Console.Clear();
                 Tela.imprimirPartida(partida);
