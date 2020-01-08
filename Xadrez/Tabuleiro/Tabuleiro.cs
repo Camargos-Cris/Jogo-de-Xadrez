@@ -30,11 +30,10 @@ namespace Xadrez.tabuleiro
             {
                 throw new TabuleiroException("Já existe uma peça nesta posição");
             }
-            else
-            {
+
                 pecas[pos.linha, pos.coluna] = p;
                 p.posicao = pos;
-            }
+            
         }
         public Peca removePeca(Posicao pos)
         {

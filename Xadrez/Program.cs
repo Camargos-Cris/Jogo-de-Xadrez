@@ -36,15 +36,15 @@ namespace Xadrez
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
-                    catch(IndexOutOfRangeException x)
+                    catch (IndexOutOfRangeException)
                     {
-                        Console.WriteLine(x.Message);
+                        Console.WriteLine("Valores de posição inválido");
                         Console.ReadLine();
                     }
                 }
                 Console.Clear();
                 Tela.imprimirPartida(partida);
-                
+
 
             }
             catch (TabuleiroException e)
